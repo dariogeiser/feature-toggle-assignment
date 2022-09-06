@@ -16,11 +16,11 @@ public class HelloWorldService {
     @PostConstruct
     private void postConstruct() {
         if (helloWorldRepository.findAll().size() == 0) {
-            helloWorldRepository.save(new HelloWorld("Hello World"));
+            helloWorldRepository.save(new HelloWorld("1","Hello"));
         }
     }
 
     public HelloWorld getHelloWorld() {
-        return helloWorldRepository.findByName("Hello World");
+        return helloWorldRepository.findById("1").get();
     }
 }

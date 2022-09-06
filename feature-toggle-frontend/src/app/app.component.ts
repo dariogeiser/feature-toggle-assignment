@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {HelloWorld, HelloworldService} from "./service/helloworld.service";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -9,12 +8,21 @@ import {Observable} from "rxjs";
 })
 export class AppComponent implements OnInit {
 
-  public helloWorld$?: Observable<HelloWorld>;
+  private helloWorld?: HelloWorld;
+  private name: string = '';
 
-  constructor(private readonly helloworldService: HelloworldService) {
+  constructor(private readonly helloWorldService: HelloworldService) {
   }
 
-  ngOnInit() {
-    this.helloWorld$ = this.helloworldService.getHelloWorld()
+  public ngOnInit() {
+    this.helloWorldService.getHelloWorld().subscribe(value => this.helloWorld = value);
+  }
+
+  public onInput(element: Event) {
+    this.name = (element.target as HTMLSdxInputElement).value
+  }
+
+  public get text(): string {
+    return `${this.helloWorld?.name} ${this.name}`
   }
 }

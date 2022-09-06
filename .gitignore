@@ -9,6 +9,7 @@ out/
 
 ## Node.js / NPM / Yarn
 /feature-toggle-frontend/dist/
+/feature-toggle-frontend/.angular/cache
 /feature-toggle-frontend/node/
 node_modules/
 npm-debug.log*

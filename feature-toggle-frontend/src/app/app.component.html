@@ -1,3 +1,2 @@
-<ng-container *ngIf="helloWorld$ | async as helloWorld">
-  {{ helloWorld.name }}
-</ng-container>
+<sdx-input label="Name" placeholder="Placeholder" (input)="onInput($event)"></sdx-input>
+{{ text }}

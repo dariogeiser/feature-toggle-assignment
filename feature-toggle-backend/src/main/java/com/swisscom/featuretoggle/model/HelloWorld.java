@@ -11,8 +11,6 @@ import javax.persistence.*;
 public class HelloWorld {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
     private String name;
@@ -22,6 +20,11 @@ public class HelloWorld {
     }
 
     public HelloWorld(String name) {
+        this.name = name;
+    }
+
+    public HelloWorld(String id, String name) {
+        this.id = id;
         this.name = name;
     }
 
