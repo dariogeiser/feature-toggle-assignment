@@ -1,12 +1,7 @@
 package com.swisscom.featuretoggle.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
-/**
- * AuditLogEntry entity
- */
 @Entity
 public class HelloWorld {
 

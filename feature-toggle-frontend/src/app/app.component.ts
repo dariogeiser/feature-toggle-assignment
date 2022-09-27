@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
     this.helloWorldService.getHelloWorld().subscribe(value => this.helloWorld = value);
   }
 
-  public onInput(element: Event) {
-    this.name = (element.target as HTMLSdxInputElement).value
+  public onInput(event: Event) {
+    this.name = (event.target as HTMLSdxInputElement).value
   }
 
   public get text(): string {
